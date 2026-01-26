@@ -17,7 +17,11 @@ class MessageFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'sender_id' => $senderId,
+            'receiver_id' => $receiverId,
+            'group_id' => $groupId,
+            'message' => $this->faker->realText(200),
+            'created_at' => $this->faker->dateTimeBetween('-1 year','now'),
         ];
     }
 }
