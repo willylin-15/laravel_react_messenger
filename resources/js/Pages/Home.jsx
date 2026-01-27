@@ -1,9 +1,9 @@
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
+import ChatLayout from '@/Layouts/ChatLayout';
 import { Head } from '@inertiajs/react';
 
 export default function Home({ auth }) {
     return (
-        <AuthenticatedLayout
+        <ChatLayout
             user={auth.user}
             header={
                 <h2 className="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
@@ -22,6 +22,6 @@ export default function Home({ auth }) {
                     </div>
                 </div>
             </div>
-        </AuthenticatedLayout>
+        </ChatLayout>
     );
 }
