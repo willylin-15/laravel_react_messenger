@@ -41,6 +41,7 @@ class DatabaseSeeder extends Seeder
             $group->users()->attach(array_unique([1, ...$users]));
 
             Message::factory(1000)->create();
+            $messages = Message::whereNull('group_id')->orderBy('created_at')->get();
 
         }
     }
