@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Group;
+use App\Models\Message;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -38,6 +39,9 @@ class DatabaseSeeder extends Seeder
 
             $users = User::inRandomOrder()->limit(rand(2, 5))->pluck('id');
             $group->users()->attach(array_unique([1, ...$users]));
+
+            Message::factory(1000)->create();
+
         }
     }
 }
