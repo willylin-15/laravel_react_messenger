@@ -6,8 +6,8 @@ const ChatLayout = ({ children }) => {
     const conversations = page.props.conversations;
     const selectedConversation = page.props.selectedConversation;
 
-    console.log("conversations", conversations)
-    console.log("selectedConversation", selectedConversation)
+    console.log("conversations", conversations);
+    console.log("selectedConversation", selectedConversation);
 
     return (
         <AuthenticatedLayout>
