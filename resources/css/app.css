@@ -3,12 +3,5 @@
 @tailwind utilities;
 
 @plugin "daisyui" {
-    themes: true;
-    darktheme: "dark";
-    base: true;
-    styled: true;
-    utils: true;
-    prefix: "";
-    logs: true;
-    themeroot: ":root";
+    themes: all;
 }
