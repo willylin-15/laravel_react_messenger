@@ -12,3 +12,10 @@
     logs: true;
     themeroot: ":root"; */
 }
+
+.conversation-item .avatar.online:before {
+    width: 8px;
+    height: 8px;
+    top: 1%;
+    right: 1%;
+}
