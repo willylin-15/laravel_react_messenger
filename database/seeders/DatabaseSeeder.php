@@ -34,12 +34,14 @@ class DatabaseSeeder extends Seeder
 
         User::factory(10)->create();
 
-        $group = Group::factory()->create([
-            'owner_id'=> 1,
-        ]);
+        for ($i = 0; $i < 5; $i++) {
+            $group = Group::factory()->create([
+                'owner_id'=> 1,
+            ]);
 
-        $users = User::inRandomOrder()->limit(rand(2, 5))->pluck('id');
-        $group->users()->attach(array_unique([1, ...$users]));
+            $users = User::inRandomOrder()->limit(rand(2, 5))->pluck('id');
+            $group->users()->attach(array_unique([1, ...$users]));
+        }
 
         Message::factory(1000)->create();
         $messages = Message::whereNull('group_id')->orderBy('created_at')->get();
@@ -57,10 +59,5 @@ class DatabaseSeeder extends Seeder
         })->values();
 
         Conversation::insertOrIgnore($conversations->toArray());
-
-        // for ($i = 0; $i < 5; $i++) {
-
-
-        // }
     }
 }
